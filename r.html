@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>منيو كافيه ليبي — فاخر</title>
+  <style>
+    /* --- ألوان وخامة عامة --- */
+    :root{
+      --bg-1: #f3efe9; /* ورقي فاتح */
+      --paper: linear-gradient(180deg, rgba(245,240,233,1) 0%, rgba(243,238,230,1) 100%);
+      --card: #fffaf6;
+      --accent-dark:#6f3f28; /* بني داكن */
+      --accent:#b86a3a; /* بني دافئ */
+      --muted:#77665b;
+      --shadow: 0 10px 30px rgba(29,20,14,0.08);
+      font-family: 'Segoe UI', Tahoma, Verdana, 'Noto Naskh Arabic', sans-serif;
+    }
+
+    /* texture: subtle coffee grain using radial-gradient */
+    body{
+      margin:0;padding:32px;background-color:var(--bg-1);background-image: radial-gradient(circle at 10% 20%, rgba(184,106,64,0.02) 0, transparent 20%), radial-gradient(circle at 80% 80%, rgba(110,70,40,0.02) 0, transparent 18%);
+      -webkit-font-smoothing:antialiased;direction:rtl;color:#2b2b2b;
+    }
+
+    .container{max-width:980px;margin:0 auto}
+
+    header{
+      display:flex;align-items:center;gap:16px;margin-bottom:18px
+    }
+    .logo{
+      width:92px;height:92px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--accent), #e6a679);color:white;font-weight:800;font-size:20px;box-shadow:var(--shadow);
+    }
+    h1{margin:0;font-size:26px}
+    .sub{color:var(--muted);font-size:14px}
+
+    /* layout */
+    .menu{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    @media(max-width:820px){.menu{grid-template-columns:1fr}}
+
+    .section{background:var(--card);border-radius:14px;padding:18px;box-shadow:var(--shadow);}
+    .section + .section{margin-top:0}
+
+    .section-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+    .sec-title{font-size:18px;margin:0;color:var(--accent-dark);display:flex;align-items:center;gap:8px}
+    .sec-sub{color:var(--muted);font-size:13px}
+
+    .list{display:flex;flex-direction:column;gap:12px}
+
+    .item{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;border:1px solid rgba(34,20,14,0.04);background:linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.5));}
+    .item:hover{transform:translateY(-3px);transition:all .18s}
+
+    .icon-wrap{width:52px;height:52px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(246,240,235,0.6));box-shadow:0 6px 20px rgba(43,25,12,0.06)}
+    .icon{width:28px;height:28px;flex:0 0 28px}
+
+    .meta{flex:1}
+    .name{font-weight:700;font-size:15px;color:#3a2a22}
+    .desc{font-size:13px;color:var(--muted);margin-top:4px}
+
+    .price{min-width:86px;text-align:left;font-weight:800;color:var(--accent-dark);font-size:15px}
+
+    /* banner */
+    .hero{background:linear-gradient(90deg, rgba(184,106,64,0.06), rgba(230,170,120,0.04));padding:14px;border-radius:12px;margin-bottom:16px;border:1px solid rgba(184,106,64,0.06)}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(184,106,64,0.12);color:var(--accent);font-weight:800}
+
+    /* footer */
+    footer{margin-top:18px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+    .contact{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));padding:12px;border-radius:12px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px}
+
+    .whatsapp{display:flex;align-items:center;gap:10px;font-weight:700;color:#14532d}
+    .whatsapp .num{color:var(--accent-dark);font-weight:800}
+
+    .meta-small{color:var(--muted);font-size:13px}
+
+    /* small visual flourish */
+    .divider{height:1px;background:linear-gradient(90deg,transparent,#e9e1d6,transparent);margin:18px 0;border-radius:1px}
+
+    /* printable friendly tweaks */
+    @media print{body{padding:0} .container{max-width:100%} .item{box-shadow:none;border:1px solid #eee}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">كافيه<br>ليبي</div>
+      <div>
+        <h1>منيو كافيه ليبي</h1>
+        <div class="sub">نكهات محلية ودفء كلاسيكي — الأسعار بالدينار الليبي (د.ل)</div>
+      </div>
+    </header>
+
+    <div class="hero">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>
+          <div class="badge">الأكثر مبيعًا</div>
+          <div style="margin-top:8px;font-weight:800;color:var(--accent-dark)">قهوة عربية أصيلة</div>
+          <div class="meta-small" style="margin-top:6px">بن محلي محمص، هيل واختيار السكر</div>
+        </div>
+        <div style="color:var(--muted);font-weight:700">⭐ 4.8 &nbsp; (1,240 تقييم)</div>
+      </div>
+    </div>
+
+    <main class="menu">
+      <!-- قهوة -->
+      <section class="section">
+        <div class="section-head">
+          <div class="sec-title">
+            <!-- small SVG cup icon -->
+            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+              <path d="M3 7h14v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V7z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M19 8v1a3 3 0 0 1-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>القهوة الساخنة</span>
+          </div>
+          <div class="sec-sub">خيار الكافيه الكلاسيكي</div>
+        </div>
+
+        <div class="list">
+          <div class="item">
+            <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h12v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V7z" stroke="#6f3f28" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="meta">
+              <div class="name">قهوة عربية</div>
+              <div class="desc">تقليدية مع هيل — 200مل</div>
+            </div>
+            <div class="price">0.90 د.ل</div>
+          </div>
+
+          <div class="item">
+            <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8" stroke="#6f3f28" stroke-width="1.2"/></svg></div>
+            <div class="meta">
+              <div class="name">إسبريسو</div>
+              <div class="desc">قوة مركزة — 30مل</div>
+            </div>
+            <div class="price">0.80 د.ل</div>
+          </div>
+
+          <div class="item">
+            <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 8h12v6a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V8z" stroke="#6f3f28" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="meta">
+              <div class="name">كابتشينو</div>
+              <div class="desc">حليب مبخر ورغوة خفيفة — 200مل</div>
+            </div>
+            <div class="price">1.50 د.ل</div>
+          </div>
+
+          <div class="item">
+            <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="6" width="16" height="10" rx="2" stroke="#6f3f28" stroke-width="1.2"/></svg></div>
+            <div class="meta">
+              <div class="name">لاتيه</div>
+              <div class="desc">قهوة مع حليب — يمكن إضافة نكهات</div>
+            </div>
+            <div class="price">1.60 د.ل</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- عصائر ومثلجات -->
+      <section class="section">
+        <div class="section-head">
+          <div class="sec-title">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>المشروبات الباردة</span>
+          </div>
+          <div class="sec-sub">عصائر طازجة وسموثي</div>
+        </div>
+
+        <div class="list">
+          <div class="item">
+            <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3h12l-1 6a4 4 0 0 1-4 3H11a4 4 0 0 1-4-3L6 3z" stroke="#6f3f28" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="meta">
+              <div class="name">عصير برتقال طازج</div>
+              <div class="desc">300مل — عصر يومي</div>
+            </div>
+            <div class="price">1.20 د.ل</div>
+          </div>
+
+          <div class="item">
+            <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16v10H4z" stroke="#6f3f28" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="meta">
+              <div class="name">سموثي فراولة</div>
+              <div class="desc">حليب أو ماء — حسب الرغبة</div>
+            </div>
+            <div class="price">1.70 د.ل</div>
+          </div>
+
+          <div class="item">
+            <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 3h8l-1 6H9L8 3z" stroke="#6f3f28" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="meta">
+              <div class="name">موهيتو ليمون (بدون كحول)</div>
+              <div class="desc">نعناع طازج وليمون</div>
+            </div>
+            <div class="price">1.30 د.ل</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- حلويات ومخبوزات -->
+      <section class="section">
+        <div class="section-head">
+          <div class="sec-title">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3 6H9l3-6zM5 20h14v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>حلويات ومخبوزات</span>
+          </div>
+          <div class="sec-sub">طازجة يوميًا</div>
+        </div>
+
+        <div class="list">
+          <div class="item">
+            <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3c2.8 0 5 2.2 5 5v7H7V8c0-2.8 2.2-5 5-5z" stroke="#6f3f28" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="meta">
+              <div class="name">كعك اللوز</div>
+              <div class="desc">قطع صغيرة — مناسبة مع القهوة</div>
+            </div>
+            <div class="price">0.60 د.ل</div>
+          </div>
+
+          <div class="item">
+            <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12h16" stroke="#6f3f28" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="meta">
+              <div class="name">تشيز كيك</div>
+              <div class="desc">شريحة كلاسيكية</div>
+            </div>
+            <div class="price">2.50 د.ل</div>
+          </div>
+
+          <div class="item">
+            <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 20h12l-1-10H7l-1 10z" stroke="#6f3f28" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="meta">
+              <div class="name">كرواسون زبدة</div>
+              <div class="desc">زبدة و هشة</div>
+            </div>
+            <div class="price">1.10 د.ل</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- عروض اليوم -->
+      <section class="section">
+        <div class="section-head">
+          <div class="sec-title">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12h18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>عروض اليوم</span>
+          </div>
+          <div class="sec-sub">تشكيلة مجمعة بأسعار موفرة</div>
+        </div>
+
+        <div class="list">
+          <div class="item">
+            <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16v12H4z" stroke="#6f3f28" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+            <div class="meta">
+              <div class="name">قهوة + قطعة حلويات</div>
+              <div class="desc">اختر أي قهوة وقطعة مخبوزات بسعر مخفض</div>
+            </div>
+            <div class="price">2.00 د.ل</div>
+          </div>
+
+          <div class="item">
+            <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 6h12v12H6z" stroke="#6f3f28" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+            <div class="meta">
+              <div class="name">عصير يومي + سموثي صغير</div>
+              <div class="desc">تركيبة منعشة</div>
+            </div>
+            <div class="price">2.40 د.ل</div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <div class="divider"></div>
+
+    <footer>
+      <div class="contact">
+        <!-- whatsapp icon -->
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+          <path d="M21.67 12.23c0 4.14-3.36 7.5-7.5 7.5a7.44 7.44 0 0 1-3.72-.98L5 20l.59-3.43A7.5 7.5 0 1 1 21.67 12.23z" fill="#25D366"/>
+          <path d="M17.3 14.6c-.28-.14-1.66-.82-1.92-.92-.26-.1-.45-.14-.64.14-.18.28-.7.92-.86 1.11-.16.18-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.38-.83-.74-1.39-1.66-1.55-1.94-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.5.14-.16.18-.28.28-.47.09-.18.05-.35-.02-.49-.07-.14-.64-1.53-.88-2.09-.23-.55-.46-.47-.64-.48-.16-.01-.35-.01-.54-.01-.18 0-.47.07-.72.35-.26.28-1 1-1 2.44s1.03 2.84 1.17 3.04c.14.2 2.02 3.27 4.9 4.59 2.76 1.25 2.76.83 3.25.78.5-.05 1.62-.66 1.85-1.3.23-.64.23-1.19.16-1.3-.07-.11-.26-.18-.54-.32z" fill="#fff"/>
+        </svg>
+
+        <div style="display:flex;flex-direction:column">
+          <div class="whatsapp">للطلب عبر واتساب <span class="num">0916006001</span></div>
+          <div class="meta-small">العنوان: شارع الشجرة، طرابلس — ساعات عمل: 8:00ص - 12:00ص</div>
+        </div>
+      </div>
+
+      <div class="meta-small">© كافيه ليبي — <span id="year"></span></div>
+    </footer>
+  </div>
+
+  <script>
+    // عرض السنة الحالية
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
